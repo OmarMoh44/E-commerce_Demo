@@ -1,0 +1,17 @@
+enum Role {
+    Buyer
+    Seller
+}
+
+model User {
+    id             Int      @id @default(autoincrement())
+    firstName      String
+    lastName       String
+    email          String   @unique
+    hashedPassword String
+    role           Role
+    created_at     DateTime @default(now())
+
+    products Product[] @relation("SellerProducts")
+    cart     Cart?
+}

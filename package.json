@@ -1,0 +1,78 @@
+{
+  "name": "e-commerce_demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OmarMoh44/E-commerce_Demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OmarMoh44/E-commerce_Demo/issues"
+  },
+  "homepage": "https://github.com/OmarMoh44/E-commerce_Demo#readme",
+  "scripts": {
+    "build": "tsc --build",
+    "start": "node -r module-alias/register ./dist/app.js",
+    "start:dev": "nodemon -r tsconfig-paths/register src/app.ts",
+    "studio:dev": "npx prisma studio",
+    "seed": "ts-node src/prisma/seed.ts",
+    "reset:dev": "npx prisma migrate reset",
+    "clearDB:dev": "ts-node src/prisma/clear.ts",
+    "migrate:dev": "npx prisma migrate dev",
+    "migrate:create": "npx prisma migrate dev --create-only"
+  },
+  "prisma": {
+    "seed": "ts-node ./src/prisma/seed.ts",
+    "schema": "src/prisma/schema/"
+  },
+  "keywords": [],
+  "dependencies": {
+    "@faker-js/faker": "^9.2.0",
+    "@prisma/client": "^5.20.0",
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "express-async-handler": "^1.2.0",
+    "express-session": "^1.18.1",
+    "joi": "^17.13.3",
+    "jsonwebtoken": "^9.0.2",
+    "module-alias": "^2.2.3",
+    "morgan": "^1.10.1",
+    "winston": "^3.17.0"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/cookie-parser": "^1.4.7",
+    "@types/express": "^4.17.21",
+    "@types/express-session": "^1.18.0",
+    "@types/hapi__joi": "^17.1.14",
+    "@types/jsonwebtoken": "^9.0.7",
+    "@types/module-alias": "^2.0.4",
+    "@types/morgan": "^1.9.10",
+    "@types/node": "^22.5.4",
+    "dotenv-cli": "^7.4.2",
+    "nodemon": "^3.1.4",
+    "prisma": "^5.20.0",
+    "redis-mock": "^0.56.3",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.6.2",
+    "typescript-eslint": "^8.17.0"
+  },
+  "_moduleAliases": {
+    "@controllers": "./dist/controllers",
+    "@middlewares": "./dist/middlewares",
+    "@DB": "./dist/prisma/PrismaClient",
+    "@services": "./dist/services",
+    "@repositories": "./dist/repositories",
+    "@validators": "./dist/validators",
+    "@models": "./dist/models",
+    "@routes": "./dist/routes",
+    "@errors": "./dist/errors",
+    "@src": "./dist"
+  }
+}
